@@ -9,20 +9,12 @@ const randomNumber = (min, max) => {
 }
 
 const generateText = () => {
-    let initialText = "Mi opinion es: "
-    let option1 = "Eso suena basado!"
-    let option2 = "Diegotastico!"
-    let option3 = "Eso no es muy basado que digamos..."
-    const randomize = randomNumber(1,3)
-    if (randomize == 1) {
-        console.log(initialText+option1)
-    } else if (randomize == 2) {
-        console.log(initialText+option2)
-    } else if (randomize == 3) {
-        console.log(initialText+option3)
-    } else {
-        console.log("error!")
+    const textObjects = {
+        initialText: ["Mi opinion es: ", "Yo considero que: ", "Entiendo, "],
+        option: ["Eso suena basado! ", "Diegotastico! ", "Eso no es muy basado que digamos... "],
+        endText: ["Hay que implementarlo.", "Piensa en otra cosa.", "Aunque habria otra manera de implementarlo."]
     }
+        console.log(textObjects.initialText[randomNumber(0,2)]+textObjects.option[randomNumber(0,2)]+textObjects.endText[randomNumber(0,2)])
 }
 
 generateText()
